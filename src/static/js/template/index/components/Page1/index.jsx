@@ -15,7 +15,7 @@ class Page1 extends React.Component {
     render() {
         return (
             <div>
-                page1
+               this is page1
             </div>
         );
     }

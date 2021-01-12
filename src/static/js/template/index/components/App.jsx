@@ -1,9 +1,8 @@
 import React from 'react';
 import { createBrowserHistory } from 'history';
-import { Switch, Route, Router, Link } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import { decideComponentUpdate } from 'utils/common/tools';
 import routers from '../../../config/routers';
-import Page1 from './Page1/index';
 
 class App extends React.Component {
     constructor(props) {
@@ -18,22 +17,26 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Router history={createBrowserHistory()}>
-                    <Link to='/wq/page1'>Home</Link>
-                    {/* <Switch>
+                <BrowserRouter history={createBrowserHistory()}>
+                    <ul>
+                        <li>
+                            <Link to='/wq/page1'>page1</Link>
+                        </li>
+                        <li>
+                            <Link to='/wq/page2'>page2</Link>
+                        </li>
+                    </ul>
+                    <Switch>
                         {
                             Object.keys(routers).map(path => {
-                                const RenderComponent = routers[path];
+                                const RenderComponent = routers[path].RenderComponent;
                                 return (
-                                    <Route key={path} path={path} render={props => <div>page1</div>} />
+                                    <Route key={path} path={path} render={props => <RenderComponent {...props} />} />
                                 );
                             })
                         }
-                    </Switch> */}
-                    <Route path='/wq/page1'>
-                        <Page1 />
-                    </Route>
-                </Router>
+                    </Switch>
+                </BrowserRouter>
             </div>
         );
     }
