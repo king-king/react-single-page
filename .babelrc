@@ -1,0 +1,17 @@
+{
+    "presets": [
+        "react", ["env", {
+            "targets": {
+                "browsers": ["ie >= 9"]
+            }
+        }], "stage-2"
+    ],
+    "plugins": [
+        ["transform-runtime", {
+            "helpers": true,
+            "polyfill": false, // 因为node_modules下涉及到Promise、Map、Set的用法，如axios和react，只能全局安装，就不用这个动态引入了
+            "regenerator": false,
+            "moduleName": "babel-runtime"
+        }]
+    ]
+}

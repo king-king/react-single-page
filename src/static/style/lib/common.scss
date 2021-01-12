@@ -1,0 +1,132 @@
+@import './base.scss';
+@mixin frame-radius-shadow {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+html,
+body {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+body {
+    // 顶部的三级类目，单独放在外层
+    .cata-drop-down {
+        width: 270px;
+        float: right;
+        margin-top: 12px;
+        position: relative;
+        z-index: 200;
+    }
+    #main {
+        height: 100%;
+        #page {
+            height: 100%;
+            &.close-menu {
+                #wrapper {
+                    #right-content {
+                        width: 1200px;
+                    }
+                }
+            }
+        }
+        .page-loading {
+            height: 100%;
+            .grace-loading {
+                height: 100%;
+            }
+        }
+        #wrapper {
+            width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            margin-top: 10px;
+            min-height: calc(100% - 120px);
+            #left-menu {
+                float: left;
+            }
+            #right-content {
+                float: right;
+            }
+            #right-content {
+                width: 1020px;
+                #content-wrapper {
+                    padding-bottom: 80px;
+                    .section {
+                        @include frame-radius-shadow;
+                        margin-top: 15px;
+                        .section-title {
+                            font-size: 16px;
+                            padding: 20px;
+                            display: inline-block;
+                        }
+                        .grace-loading .blur-out.grace-loading-contenet {
+                            filter: none;
+                        }
+                    }
+                }
+                #content-header {
+                    padding: 0 20px;
+                    height: 60px;
+                    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.10);
+                    border-radius: 2px;
+                    background: #fff;
+                    .content-header-title {
+                        float: left;
+                        height: 60px;
+                        line-height: 60px;
+                        width: 200px;
+                        font-size: 18px;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+.tooltip {
+    background: url(../../img/tooltip.svg) 0 0 no-repeat;
+    background-size: 11px auto;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-left: 5px;
+    cursor: pointer;
+    &.white {
+        background: url(../../img/tooltip-white.svg) 0 0 no-repeat;
+        background-size: 11px auto;
+    }
+    &.gray {
+        background: url(../../img/tooltip-gray.svg) 0 0 no-repeat;
+        background-size: 11px auto;
+    }
+    &.red {
+        background: url(../../img/tooltip-red.svg) 0 0 no-repeat;
+        background-size: 11px auto;
+    }
+}
+.grace-grid-placeholder {
+    font-size: 15px;
+    font-weight: 600;
+    color: #666666;
+    fill: #666666;
+}

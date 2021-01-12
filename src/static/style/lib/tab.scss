@@ -1,0 +1,24 @@
+.tabs {
+    height: 40px;
+    line-height: 39px;
+    padding-left: 20px;
+    border-bottom: 1px solid #DFE2E5;
+    font-size: 14px;
+    color: #333;
+    li {
+        line-height: 39px;
+        height: 39px;
+        display: inline-block;
+        padding: 0 20px;
+        border-width: 2px 1px 1px 1px;
+        border-style: solid;
+        border-color: #fff #fff #DFE2E5 #fff;
+        cursor: pointer;
+        background-color: #fff;
+        margin-top: -1px;
+        &.select {
+            transition: 0.5s;
+            border-color: #4192EC #DFE2E5 #fff #DFE2E5;
+        }
+    }
+}

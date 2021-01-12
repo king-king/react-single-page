@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content test 快照 1`] = `
+<div
+  class="section"
+>
+  <div
+    class="section-title"
+  >
+    TITLE
+  </div>
+</div>
+`;
+
+exports[`Content test 快照 2`] = `
+<div
+  class="section"
+>
+  <div
+    class="section-title"
+  >
+    TITLE
+  </div>
+</div>
+`;
